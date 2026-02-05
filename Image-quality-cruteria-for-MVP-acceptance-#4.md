@@ -68,35 +68,12 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 
 ---
 
-## Nice-to-Have Criteria (Optional)
+## Optional / Nice-to-Have Enhancements
 
-### Shadow (if implemented)
-
-**Pass if:**
-
-- Soft shadow under car helps it sit on the ground
-- Shadow doesn’t look like a dark blob
-
-**Fail if:**
-
-- Shadow direction/size is clearly wrong
-- Shadow is harsh or disconnected from wheels
-
-✅ **MVP threshold:** *Simple soft ground shadow is acceptable; realism is not required.*
-
-### Watermark (if implemented)
-
-**Pass if:**
-
-- Watermark is visible but not blocking the car
-- Consistent placement (e.g., bottom-right)
-
-**Fail if:**
-
-- Covers important details (logo/grille/price sticker area)
-- Too strong or distracting
-
-✅ **MVP threshold:** *Readable and consistent placement; subtle transparency.*
+| Feature                 | Status      | Notes                                                                                                                               |
+| ----------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Generated ground shadow | Not present | Car appears slightly flat against white background. Acceptable for MVP; realism enhancement planned for later iteration.            |
+| Watermark / branding    | Acceptable  | Dealer banner and branding are visible and do not interfere with key vehicle features. Placement is consistent and non-distracting. |
 
 ---
 
