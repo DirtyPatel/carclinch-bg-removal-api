@@ -1,6 +1,4 @@
-# Olga branch
-
-## [MVP] Define image quality criteria for MVP acceptance #4
+# [MVP] Define image quality criteria for MVP acceptance #4
 
 
 User Story:
