@@ -66,16 +66,12 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 | 4 | Composition & placement         | **Pass** | Car is well-centered and fully within frame. Perspective and scale are appropriate for a listing image. No awkward cropping or floating appearance.                            |
 | 5 | Resolution & visual sharpness   | **Pass** | Output resolution is sufficient for dealership listings. No noticeable blur or distracting compression artifacts.                                                              |
 
----
-
 ### Optional / Nice-to-Have Enhancements
 
 | Feature                 | Status      | Notes                                                                                                                               |
 | ----------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | Generated ground shadow | Not present | Car appears slightly flat against white background. Acceptable for MVP; realism enhancement planned for later iteration.            |
 | Watermark / branding    | Acceptable  | Dealer banner and branding are visible and do not interfere with key vehicle features. Placement is consistent and non-distracting. |
-
----
 
 ### Overall MVP Verdict
 
@@ -84,7 +80,7 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 | ✅ **GO for MVP Demo** | Image meets all core MVP quality criteria. Minor imperfections are only noticeable under close inspection. Output quality is comparable to existing online dealership listings and sufficient to validate the CarClinch use case. |
 | **No-Go** ❌ | More than **20%** of outputs have obvious halos, missing parts, or big artifacts. The output regularly looks “fake” or broken at normal listing size |
 
-#### Shadow Clarification (MVP Scope)
+### Shadow Clarification (MVP Scope)
 
 | Item             | Description                                                                          |
 | ---------------- | ------------------------------------------------------------------------------------ |
