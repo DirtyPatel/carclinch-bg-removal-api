@@ -300,3 +300,58 @@ You can append something like:
 This output is **“good enough”** to validate the concept with stakeholders and proceed with further RnD.
 
 ---
+
+### Shadow Clarification (Corrected for MVP)
+
+**Note on shadows:**
+The sample Kia Sorento image contains **studio lighting and contact shading** from the original photography. This is **not a generated shadow** produced by the background-removal pipeline.
+
+For MVP evaluation, the presence of a generated ground shadow will be treated as a **nice-to-have enhancement**, not a core acceptance requirement.
+
+---
+
+## Sample Evaluation: <Vehicle / Image ID>
+
+**Input image type:** (dealer photo / phone photo / outdoor / studio)  
+**Output size & format:** (e.g., 1024×768 WEBP)  
+**Background used:** (white / uploaded background)  
+
+---
+
+### Quality Review
+
+#### 1) Cutout Completeness — Pass / Minor / Fail
+- Notes:
+
+#### 2) Edge Quality (halo / fringing) — Pass / Minor / Fail
+- Notes:
+
+#### 3) Artifacts & Mask Errors — Pass / Minor / Fail
+- Notes:
+
+#### 4) Composition & Placement — Pass / Minor / Fail
+- Notes:
+
+#### 5) Resolution & Visual Sharpness — Pass / Minor / Fail
+- Notes:
+
+---
+
+### Optional Enhancements (Nice-to-Have)
+
+#### Generated Shadow — Not Present / Acceptable / Needs Improvement
+- Notes:
+
+#### Watermark / Branding — Not Present / Acceptable / Needs Improvement
+- Notes:
+
+---
+
+### Overall MVP Verdict
+
+**Result:** ✅ Go / ❌ No-Go  
+
+**Summary Notes:**
+- 1–2 bullets on why it passed or failed
+
+
