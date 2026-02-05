@@ -220,93 +220,51 @@ You can append something like:
 *Figure 2: 2019 Kia Sorento Output Image*
 ![](/screenshots/2019-Kia-Sorento-output-image.png)
 
-**Source image:** Dealer-style promotional photo\
-**Output size:** 1024 × 768 (WEBP)\
-**Rendered size:** ~573 × 430\
-**Background:** Solid white with dealership banner overlay
+### Image Metadata
 
-### Quality Review (Based on MVP Criteria)
+| Field                | Value                                      |
+| -------------------- | ------------------------------------------ |
+| Source image         | Dealer-style promotional photo             |
+| Output size & format | 1024 × 768 (WEBP)                          |
+| Rendered size        | ~573 × 430                                 |
+| Background           | Solid white with dealership banner overlay |
 
-**1) Cutout Completeness — Pass**
 
-- All major car components are intact (roof, mirrors, wheels, grille, bumper).
-- No visible missing sections or holes in the body.
-- Fine details (mirrors, roof rails) are preserved.
+### Core MVP Quality Review
 
-**✅ Meets MVP expectations**
+| # | Category                        | Result   | Notes                                                                                                                                                                          |
+| - | ------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1 | Cutout completeness (car parts) | **Pass** | All major components intact (roof, mirrors, wheels, grille, bumper). No visible missing sections or holes. Fine details such as mirrors and roof rails preserved.              |
+| 2 | Edge quality (halo / fringing)  | **Pass** | Edges are clean and well-defined. Minor softness around thin areas (roof rails, window edges) visible only at close inspection. No strong halo visible at normal listing size. |
+| 3 | Artifacts & mask errors         | **Pass** | No background remnants, transparent gaps, or blocky segmentation artifacts. Reflections on windows remain natural and intact.                                                  |
+| 4 | Composition & placement         | **Pass** | Car is well-centered and fully within frame. Perspective and scale are appropriate for a listing image. No awkward cropping or floating appearance.                            |
+| 5 | Resolution & visual sharpness   | **Pass** | Output resolution is sufficient for dealership listings. No noticeable blur or distracting compression artifacts.                                                              |
 
-**2) Edge Quality (Halo / Fringing) — Pass (Minor Issues Acceptable)**
+### Optional / Nice-to-Have Enhancements
 
-- Overall edges are clean and well-defined.
-- Minor softness around thin areas (roof rails, window edges) visible only at close inspection.
-- No strong white/black halo visible at normal listing size.\
-⚠️ Minor edge smoothing is acceptable for MVP.
-
-**✅ Pass for MVP**
-
-**3) Artifacts & Mask Errors — Pass**
-
-- No background remnants (trees, pavement, shadows from original scene).
-- No random transparent patches or blocky segmentation artifacts.
-- Reflections on windows look natural and not broken by the mask.
-
-**✅ Pass for MVP**
-
-**4) Composition & Placement — Pass**
-
-- Car is well-centered and fully within frame.
-- Perspective and scale feel correct for a listing image.
-- Car does not appear cropped or floating.\
-ℹ️ Grounding shadow is absent, but acceptable at MVP stage.
-
-**✅ Pass for MVP**
-
-**5) Resolution & Visual Sharpness — Pass**
-
-- Output resolution is sufficient for typical dealership listing views.
-- No noticeable blur compared to expected web-quality automotive images.
-- Compression artifacts are minimal and non-distracting.
-
-**✅ Pass for MVP**
-
-### Optional / Nice-to-Have Observations
-
-**Shadow**
-
-- No shadow present beneath the vehicle.
-- Car appears slightly “flat” against white background, but still acceptable.\
-➡️ **Nice-to-have improvement**, not required for MVP acceptance.
-
-**Watermark / Branding**
-
-- Dealer banner and branding are clearly visible and do not interfere with the car.
-- Watermark placement does not obscure key vehicle features.
-
-**✅ Acceptable for MVP demo purposes.**
+| Feature                 | Status      | Notes                                                                                                                               |
+| ----------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Generated ground shadow | Not present | Car appears slightly flat against white background. Acceptable for MVP; realism enhancement planned for later iteration.            |
+| Watermark / branding    | Acceptable  | Dealer banner and branding are visible and do not interfere with key vehicle features. Placement is consistent and non-distracting. |
 
 ---
 
 ## Overall MVP Verdict
 
-**Overall Result: ✅ GO for MVP Demo**
-
-**Rationale:**
-
-- Image meets all core MVP quality criteria.
-- Minor imperfections are only noticeable under close inspection.
-- Output quality is comparable to existing online dealership listings.
-- Demonstrates that background removal and replacement are viable for CarClinch’s use case.
-
-This output is **“good enough”** to validate the concept with stakeholders and proceed with further RnD.
+| Decision              | Rationale                                                                                                                                                                                                                         |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ✅ **GO for MVP Demo** | Image meets all core MVP quality criteria. Minor imperfections are only noticeable under close inspection. Output quality is comparable to existing online dealership listings and sufficient to validate the CarClinch use case. |
 
 ---
 
-### Shadow Clarification (Corrected for MVP)
+### Shadow Clarification (MVP Scope)
 
-**Note on shadows:**
-The sample Kia Sorento image contains **studio lighting and contact shading** from the original photography. This is **not a generated shadow** produced by the background-removal pipeline.
+| Item             | Description                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------ |
+| Shadow source    | Studio lighting and contact shading from original photography                        |
+| Generated shadow | **Not present**                                                                      |
+| MVP requirement  | Generated ground shadow treated as **nice-to-have**, not a core acceptance criterion |
 
-For MVP evaluation, the presence of a generated ground shadow will be treated as a **nice-to-have enhancement**, not a core acceptance requirement.
 
 ---
 
