@@ -1,25 +1,21 @@
 # [MVP] Define image quality criteria for MVP acceptance #4
 
 
-User Story:
+**User Story:**\
 As the team,
 We want clear quality criteria,
 So that we can decide if the MVP output is acceptable.
 
-Task:
+**Task:**\
 Review background-removed car images from PoC testing
 and define what "good enough for MVP" means.
 
-Acceptance Criteria:
-
-
-Review sample output images
-
-Define quality checks (edges, artifacts, consistency)
-
+**Acceptance Criteria:**\
+Review sample output images\
+Define quality checks (edges, artifacts, consistency)\
 Identify acceptable vs non-acceptable results
 
-Deliverable:
+**Deliverable:**\
 Short quality checklist + Go/No-Go opinion for MVP demo.
 
 ---
