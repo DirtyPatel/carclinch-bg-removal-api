@@ -314,52 +314,6 @@ For MVP evaluation, the presence of a generated ground shadow will be treated as
 
 **Input image type:** (dealer photo / phone photo / outdoor / studio)  
 **Output size & format:** (e.g., 1024×768 WEBP)  
-**Background used:** (white / uploaded background)  
-
----
-
-### Quality Review
-
-#### 1) Cutout Completeness — Pass / Minor / Fail
-- Notes:
-
-#### 2) Edge Quality (halo / fringing) — Pass / Minor / Fail
-- Notes:
-
-#### 3) Artifacts & Mask Errors — Pass / Minor / Fail
-- Notes:
-
-#### 4) Composition & Placement — Pass / Minor / Fail
-- Notes:
-
-#### 5) Resolution & Visual Sharpness — Pass / Minor / Fail
-- Notes:
-
----
-
-### Optional Enhancements (Nice-to-Have)
-
-#### Generated Shadow — Not Present / Acceptable / Needs Improvement
-- Notes:
-
-#### Watermark / Branding — Not Present / Acceptable / Needs Improvement
-- Notes:
-
----
-
-### Overall MVP Verdict
-
-**Result:** ✅ Go / ❌ No-Go  
-
-**Summary Notes:**
-- 1–2 bullets on why it passed or failed
-
----
-
-## Sample Evaluation: <Vehicle / Image ID>
-
-**Input image type:** (dealer photo / phone photo / outdoor / studio)  
-**Output size & format:** (e.g., 1024×768 WEBP)  
 **Background used:** (white / uploaded background)
 
 ---
