@@ -20,6 +20,8 @@ Short quality checklist + Go/No-Go opinion for MVP demo.
 
 ---
 
+## Output Image example & setting
+
 *Figure 1: 2019 Kia Sorento output image setting*\
 ![2019 Kia Sorento output image setting](/screenshots/2019-Kia-Sorento-output-image-setting.png)
 
@@ -34,3 +36,20 @@ Intrinsic aspect ratio: 4:3
 File size: 410 kB
 Current source: https://imgs-cdn1-dmhch4b7bfgcbhgm.z03.azurefd.net/bf3dddd3-ff8b-4458-96bf-ea18a5b0c2b4/6b774366-78ff-4a1f-9d34-71b107ccbc40.webp
 
+---
+
+## Proposed MVP Image Quality Criteria (Checklist + Go/No-Go)
+
+### Scope
+
+Applies to:
+
+- **Car cutout** (background removed)
+
+- **Car composited** onto a **user-uploaded background**
+
+- (Optional/Nice-to-have) **shadow** and/or **watermark**
+
+### Definition of “Good Enough for MVP”
+
+The output is acceptable if a viewer **can’t immediately spot obvious cutout mistakes** at normal viewing size (web listing) and the car looks naturally placed on the new background.
