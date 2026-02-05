@@ -82,8 +82,7 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 | Decision              | Rationale                                                                                                                                                                                                                         |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ✅ **GO for MVP Demo** | Image meets all core MVP quality criteria. Minor imperfections are only noticeable under close inspection. Output quality is comparable to existing online dealership listings and sufficient to validate the CarClinch use case. |
-| **No-Go** ❌ | - More than **20%** of outputs have obvious halos, missing parts, or big artifacts\
-- The output regularly looks “fake” or broken at normal listing size |
+| **No-Go** ❌ | More than **20%** of outputs have obvious halos, missing parts, or big artifacts. The output regularly looks “fake” or broken at normal listing size |
 
 ---
 
