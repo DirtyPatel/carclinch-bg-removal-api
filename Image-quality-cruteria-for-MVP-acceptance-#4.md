@@ -91,7 +91,6 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 **Pass if:**
 
 - No obvious leftover background blobs
-
 - No random transparent patches around the car
 
 **Fail if:**
@@ -133,5 +132,37 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 
 - Minimum output size: 1024 x 768 (or longer side ≥ 1024px)
 - Format: PNG (if transparency needed) or WEBP/JPG (if composited onto background)
+
+---
+
+## Nice-to-Have Criteria (Optional)
+
+### Shadow (if implemented)
+
+**Pass if:**
+
+- Soft shadow under car helps it sit on the ground
+- Shadow doesn’t look like a dark blob
+
+**Fail if:**
+
+- Shadow direction/size is clearly wrong
+- Shadow is harsh or disconnected from wheels
+
+✅ **MVP threshold:** *Simple soft ground shadow is acceptable; realism is not required.*
+
+### Watermark (if implemented)
+
+**Pass if:**
+
+- Watermark is visible but not blocking the car
+- Consistent placement (e.g., bottom-right)
+
+**Fail if:**
+
+- Covers important details (logo/grille/price sticker area)
+- Too strong or distracting
+
+✅ **MVP threshold:** *Readable and consistent placement; subtle transparency.*
 
 ---
