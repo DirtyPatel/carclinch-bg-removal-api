@@ -56,7 +56,7 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 
 ---
 
-## Core MVP Quality Review
+### Core MVP Quality Review
 
 | # | Category                        | Result   | Notes                                                                                                                                                                          |
 | - | ------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -68,7 +68,7 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 
 ---
 
-## Optional / Nice-to-Have Enhancements
+### Optional / Nice-to-Have Enhancements
 
 | Feature                 | Status      | Notes                                                                                                                               |
 | ----------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
@@ -77,12 +77,20 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 
 ---
 
-## Overall MVP Verdict
+### Overall MVP Verdict
 
 | Decision              | Rationale                                                                                                                                                                                                                         |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ✅ **GO for MVP Demo** | Image meets all core MVP quality criteria. Minor imperfections are only noticeable under close inspection. Output quality is comparable to existing online dealership listings and sufficient to validate the CarClinch use case. |
 | **No-Go** ❌ | More than **20%** of outputs have obvious halos, missing parts, or big artifacts. The output regularly looks “fake” or broken at normal listing size |
+
+#### Shadow Clarification (MVP Scope)
+
+| Item             | Description                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------ |
+| Shadow source    | Studio lighting and contact shading from original photography                        |
+| Generated shadow | **Not present**                                                                      |
+| MVP requirement  | Generated ground shadow treated as **nice-to-have**, not a core acceptance criterion |
 
 ---
 
