@@ -166,3 +166,105 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 ✅ **MVP threshold:** *Readable and consistent placement; subtle transparency.*
 
 ---
+
+## Go / No-Go Rubric for MVP Demo
+
+**Go ✅ if:**
+
+- At least **80% of test images** pass the checklist (1–5)
+- No more than **1 “Fail” category** per image (minor flaws allowed)
+- The failures are explainable (e.g., “hard cases” like white car + white wall)
+
+**No-Go ❌ if:**
+
+- More than **20%** of outputs have obvious halos, missing parts, or big artifacts
+- The output regularly looks “fake” or broken at normal listing size
+
+### Suggested Test Set (for consistency)
+
+Use 10–15 images covering common “hard” cases:
+
+- White car on light background
+- Dark car on dark background
+- Complex background (trees, fence)
+- Reflections on windows
+- Cars with thin parts (mirrors, antennas)
+
+### How to Review (Quick Procedure)
+
+For each image:
+
+1. View at **~600px wide** (typical listing)
+2. Zoom to **100%** for edge check
+3. Mark each category as **Pass / Minor Issue / Fail**
+4. Record 1–2 notes if Fail (example: “halo around roofline”)
+
+### Example: The Kia Sorento Sample Section (Add This)
+
+You can append something like:
+
+- **Sample:** 2019 Kia Sorento output
+- **Intrinsic size:** 1024×768, WEBP, 410KB
+- **MVP Review Notes (to fill):**
+    - Cutout completeness: Pass / Minor / Fail
+    - Edge quality: Pass / Minor / Fail
+    - Artifacts: Pass / Minor / Fail
+    - Composition: Pass / Minor / Fail
+    - Resolution: Pass / Minor / Fail
+    - Overall: Go / No-Go
+
+---
+
+## Sample Evaluation: 2019 Kia Sorento Output Image
+
+*Figure 2: 2019 Kia Sorento Output Image*
+![](/screenshots/2019-Kia-Sorento-output-image.png)
+
+**Source image:** Dealer-style promotional photo\
+**Output size:** 1024 × 768 (WEBP)\
+**Rendered size:** ~573 × 430\
+**Background:** Solid white with dealership banner overlay
+
+### Quality Review (Based on MVP Criteria)
+
+**1) Cutout Completeness — Pass**
+
+- All major car components are intact (roof, mirrors, wheels, grille, bumper).
+- No visible missing sections or holes in the body.
+- Fine details (mirrors, roof rails) are preserved.
+
+**✅ Meets MVP expectations**
+
+**2) Edge Quality (Halo / Fringing) — Pass (Minor Issues Acceptable)**
+
+- Overall edges are clean and well-defined.
+- Minor softness around thin areas (roof rails, window edges) visible only at close inspection.
+- No strong white/black halo visible at normal listing size.\
+⚠️ Minor edge smoothing is acceptable for MVP.
+
+**✅ Pass for MVP**
+
+**3) Artifacts & Mask Errors — Pass**
+
+- No background remnants (trees, pavement, shadows from original scene).
+- No random transparent patches or blocky segmentation artifacts.
+- Reflections on windows look natural and not broken by the mask.
+
+**✅ Pass for MVP**
+
+**4) Composition & Placement — Pass**
+
+- Car is well-centered and fully within frame.
+- Perspective and scale feel correct for a listing image.
+- Car does not appear cropped or floating.\
+ℹ️ Grounding shadow is absent, but acceptable at MVP stage.
+
+**✅ Pass for MVP**
+
+**5) Resolution & Visual Sharpness — Pass**
+
+- Output resolution is sufficient for typical dealership listing views.
+- No noticeable blur compared to expected web-quality automotive images.
+- Compression artifacts are minimal and non-distracting.
+
+**✅ Pass for MVP**
