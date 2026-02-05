@@ -268,3 +268,35 @@ You can append something like:
 - Compression artifacts are minimal and non-distracting.
 
 **✅ Pass for MVP**
+
+### Optional / Nice-to-Have Observations
+
+**Shadow**
+
+- No shadow present beneath the vehicle.
+- Car appears slightly “flat” against white background, but still acceptable.\
+➡️ **Nice-to-have improvement**, not required for MVP acceptance.
+
+**Watermark / Branding**
+
+- Dealer banner and branding are clearly visible and do not interfere with the car.
+- Watermark placement does not obscure key vehicle features.
+
+**✅ Acceptable for MVP demo purposes.**
+
+---
+
+## Overall MVP Verdict
+
+**Overall Result: ✅ GO for MVP Demo**
+
+**Rationale:**
+
+- Image meets all core MVP quality criteria.
+- Minor imperfections are only noticeable under close inspection.
+- Output quality is comparable to existing online dealership listings.
+- Demonstrates that background removal and replacement are viable for CarClinch’s use case.
+
+This output is **“good enough”** to validate the concept with stakeholders and proceed with further RnD.
+
+---
