@@ -77,18 +77,15 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 
 ---
 
-## Go / No-Go Rubric for MVP Demo
+## Overall MVP Verdict
 
-**Go ✅ if:**
+| Decision              | Rationale                                                                                                                                                                                                                         |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ✅ **GO for MVP Demo** | Image meets all core MVP quality criteria. Minor imperfections are only noticeable under close inspection. Output quality is comparable to existing online dealership listings and sufficient to validate the CarClinch use case. |
+| **No-Go** ❌ | - More than **20%** of outputs have obvious halos, missing parts, or big artifacts\
+- The output regularly looks “fake” or broken at normal listing size |
 
-- At least **80% of test images** pass the checklist (1–5)
-- No more than **1 “Fail” category** per image (minor flaws allowed)
-- The failures are explainable (e.g., “hard cases” like white car + white wall)
-
-**No-Go ❌ if:**
-
-- More than **20%** of outputs have obvious halos, missing parts, or big artifacts
-- The output regularly looks “fake” or broken at normal listing size
+---
 
 ### Suggested Test Set (for consistency)
 
@@ -108,20 +105,6 @@ For each image:
 2. Zoom to **100%** for edge check
 3. Mark each category as **Pass / Minor Issue / Fail**
 4. Record 1–2 notes if Fail (example: “halo around roofline”)
-
-### Example: The Kia Sorento Sample Section (Add This)
-
-You can append something like:
-
-- **Sample:** 2019 Kia Sorento output
-- **Intrinsic size:** 1024×768, WEBP, 410KB
-- **MVP Review Notes (to fill):**
-    - Cutout completeness: Pass / Minor / Fail
-    - Edge quality: Pass / Minor / Fail
-    - Artifacts: Pass / Minor / Fail
-    - Composition: Pass / Minor / Fail
-    - Resolution: Pass / Minor / Fail
-    - Overall: Go / No-Go
 
 ---
 
