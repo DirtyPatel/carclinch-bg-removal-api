@@ -56,84 +56,15 @@ The output is acceptable if a viewer **can’t immediately spot obvious cutout m
 
 ---
 
-## Quality Checklist (Manual Review)
+## Core MVP Quality Review
 
-**1) Cutout completeness (car parts)**
-
-**Pass if:**
-
-- No major missing car areas (roof, mirrors, wheels, bumpers, grille)
-- Fine details may be imperfect, but the car still reads clearly
-
-**Fail if:**
-
-- Missing mirror/wheel/roof chunk
-- Holes inside the car body (transparent gaps)
-- Car is partially erased due to background similarity
-
-✅ **MVP threshold:** *No missing “large parts” visible at normal web size.*
-
-**2) Edge quality (halo, jaggies, fringing)**
-
-**Pass if:**
-
-- Car edges look clean overall
-- Minor jagged pixels are acceptable if they don’t stand out at normal web size
-
-**Fail if:**
-
-- Strong white/black “halo” around the car
-- Heavy jagged edges on roofline/doors
-- Background color bleed (green/blue fringing) clearly visible
-
-✅ **MVP threshold:** *No obvious halo/fringe when viewing at ~600px width.*
-
-**3) Artifact control (weird leftovers)**
-
-**Pass if:**
-
-- No obvious leftover background blobs
-- No random transparent patches around the car
-
-**Fail if:**
-
-- Background objects remain (trees, signs, people, license plate stand, reflections that look like blobs)
-- Blocky artifacts or mask edges are clearly visible
-
-✅ **MVP threshold:** *No distracting artifacts that would confuse a customer.*
-
-**4) Composition quality (car on new background)**
-
-**Pass if:**
-
-- Car is fully inside the frame
-- Car position looks reasonable (not floating, not cropped awkwardly)
-- Background is applied correctly with no stretching that looks broken
-
-**Fail if:**
-
-- Car is floating with no grounding
-- Car scale looks wildly wrong relative to background
-- Cropping cuts off wheels/bumper in a bad way
-
-✅ **MVP threshold:** *Car looks “placed” on the background without obvious* mistakes.
-
-**5) Output resolution & format**
-
-**Pass if:**
-
-- Output image is not blurry/pixelated compared to input
-- Minimum size works for typical listing view
-
-**Fail if:**
-
-- Output is noticeably softer than input
-- Output too small for web display
-
-✅ **MVP threshold (suggested):**
-
-- Minimum output size: 1024 x 768 (or longer side ≥ 1024px)
-- Format: PNG (if transparency needed) or WEBP/JPG (if composited onto background)
+| # | Category                        | Result   | Notes                                                                                                                                                                          |
+| - | ------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1 | Cutout completeness (car parts) | **Pass** | All major components intact (roof, mirrors, wheels, grille, bumper). No visible missing sections or holes. Fine details such as mirrors and roof rails preserved.              |
+| 2 | Edge quality (halo / fringing)  | **Pass** | Edges are clean and well-defined. Minor softness around thin areas (roof rails, window edges) visible only at close inspection. No strong halo visible at normal listing size. |
+| 3 | Artifacts & mask errors         | **Pass** | No background remnants, transparent gaps, or blocky segmentation artifacts. Reflections on windows remain natural and intact.                                                  |
+| 4 | Composition & placement         | **Pass** | Car is well-centered and fully within frame. Perspective and scale are appropriate for a listing image. No awkward cropping or floating appearance.                            |
+| 5 | Resolution & visual sharpness   | **Pass** | Output resolution is sufficient for dealership listings. No noticeable blur or distracting compression artifacts.                                                              |
 
 ---
 
