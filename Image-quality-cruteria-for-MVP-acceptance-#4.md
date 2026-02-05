@@ -18,6 +18,7 @@ Review sample output images
 Define quality checks (edges, artifacts, consistency)
 
 Identify acceptable vs non-acceptable results
+
 Deliverable:
 Short quality checklist + Go/No-Go opinion for MVP demo.
 
