@@ -355,3 +355,8 @@ For MVP evaluation, the presence of a generated ground shadow will be treated as
 - 1–2 bullets on why it passed or failed
 
 
+---
+
+## Executive Summary
+
+The proof of concept confirms that reliable car segmentation and background replacement can be achieved with minimal artifacts at standard web resolutions. The current implementation meets the MVP acceptance criteria, with optional enhancements, such as generated shadows, identified for future iterations.
