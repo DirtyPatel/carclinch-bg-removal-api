@@ -21,7 +21,9 @@ Identify acceptable vs non-acceptable results
 Deliverable:
 Short quality checklist + Go/No-Go opinion for MVP demo.
 
-*2019 Kia Sorento output image setting*\
+---
+
+*Figure 1: 2019 Kia Sorento output image setting*\
 ![2019 Kia Sorento output image setting](/screenshots/2019-Kia-Sorento-output-image-setting.png)
 
 ```
