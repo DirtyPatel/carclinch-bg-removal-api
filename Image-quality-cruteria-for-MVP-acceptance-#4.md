@@ -206,3 +206,11 @@ For each image:
 ## Executive Summary
 
 The proof of concept confirms that reliable car segmentation and background replacement can be achieved with minimal artifacts at standard web resolutions. The current implementation meets the MVP acceptance criteria, with optional enhancements, such as generated shadows, identified for future iterations.
+
+---
+
+## References
+
+1. API4AI. (n.d.). AI car background removal for e-commerce listings. Medium. https://medium.com/@API4AI/car-background-removal-for-automotive-e-commerce-listings-d633379ac251
+
+2. Wikipedia contributors. (n.d.). Structural similarity index measure. In Wikipedia. Retrieved February 5, 2026, from https://en.wikipedia.org/wiki/Structural_similarity_index_measure
