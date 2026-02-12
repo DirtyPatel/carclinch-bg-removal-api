@@ -1,0 +1,4 @@
+model_eval/.cache
+model_eval/results
+*/__pycache__
+*/.venv
