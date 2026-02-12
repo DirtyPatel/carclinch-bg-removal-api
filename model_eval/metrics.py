@@ -1,6 +1,7 @@
 import numpy as np
 
 
+# Calculate the dice coefficient
 def dice(gt: np.ndarray, pred: np.ndarray) -> float:
     assert gt.shape == pred.shape
 
@@ -14,6 +15,7 @@ def dice(gt: np.ndarray, pred: np.ndarray) -> float:
     return 2.0 * intersection / (gt_fg + pred_fg)
 
 
+# Calculate the intersection over union
 def iou(gt: np.ndarray, pred: np.ndarray) -> float:
     assert gt.shape == pred.shape
 
