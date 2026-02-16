@@ -3,3 +3,12 @@ model_eval/results
 */__pycache__
 */.venv
 */images
+
+# venv anywhere (root + any depth)
+.venv/
+**/.venv/
+
+# python cache anywhere
+__pycache__/
+**/__pycache__/
+*.pyc
