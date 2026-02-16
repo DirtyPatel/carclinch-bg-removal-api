@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CarClinch Background Removal Demo</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>CarClinch Background Removal</h1>
+      <p class="sub">Upload a car photo to get a background-removed PNG.</p>
+
+      {% if error %}
+      <div class="alert">{{ error }}</div>
+      {% endif %}
+
+      <form
+        class="card"
+        method="post"
+        action="/remove"
+        enctype="multipart/form-data"
+      >
+        <label>Choose an image</label>
+        <input type="file" name="image" accept="image/*" required />
+        <button type="submit">Remove Background</button>
+      </form>
+
+      {% if result %}
+      <section class="result">
+        <h2>Result</h2>
+        <img src="{{ result }}" alt="Result image" />
+        <a class="btn" href="{{ result }}" download="bg-removed.png"
+          >Download PNG</a
+        >
+      </section>
+      {% endif %}
+    </main>
+  </body>
+</html>
