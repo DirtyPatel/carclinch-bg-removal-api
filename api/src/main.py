@@ -6,6 +6,11 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 import sys
 from fastapi.responses import FileResponse
 
+os.environ.setdefault("OMP_NUM_THREADS", "1")
+os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
+os.environ.setdefault("MKL_NUM_THREADS", "1")
+os.environ.setdefault("NUMEXPR_NUM_THREADS", "1")
+
 root_dir = Path(__file__).resolve().parent.parent.parent
 sys.path.append(str(root_dir))
 
@@ -61,12 +66,12 @@ def upload_image(image: UploadFile = File(...)):
     with Image.open(input_path) as img:
         img = img.convert("RGB")
         img.thumbnail((512, 512))  # reduce memory usage
-        img.save(input_path, format="JPEG", quality=90)
+        img.save(input_path, format="JPEG", quality=85)
 
     # ✅ 3. Now run background removal
     output_img, _ = processor.process_image(
         str(input_path),
-        model_name="isnet-general-use"
+        model_name="u2netp"
     )
 
     output_img.save(output_path, format="PNG")
