@@ -60,7 +60,7 @@ def upload_image(image: UploadFile = File(...)):
     # ✅ 2. Downscale BEFORE background removal (THIS IS NEW)
     with Image.open(input_path) as img:
         img = img.convert("RGB")
-        img.thumbnail((1024, 1024))  # reduce memory usage
+        img.thumbnail((768, 768))  # reduce memory usage
         img.save(input_path, format="JPEG", quality=90)
 
     # ✅ 3. Now run background removal
