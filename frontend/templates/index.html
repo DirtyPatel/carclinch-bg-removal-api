@@ -21,7 +21,7 @@
       <form
         class="card"
         method="post"
-        action="/remove"
+        action="{{ url_for('remove') }}"
         enctype="multipart/form-data"
       >
         <label>Choose an image</label>
@@ -29,14 +29,28 @@
         <button type="submit">Remove Background</button>
       </form>
 
-      {% if result %}
-      <section class="result">
-        <h2>Result</h2>
-        <img src="{{ result }}" alt="Result image" />
-        <a class="btn" href="{{ result }}" download="bg-removed.png"
-          >Download PNG</a
-        >
-      </section>
+      {% if uploaded_preview or processed_preview %}
+      <div class="preview-grid">
+        {% if uploaded_preview %}
+        <section class="preview-card">
+          <h3>Uploaded</h3>
+          <img src="{{ uploaded_preview }}" alt="Uploaded preview" />
+        </section>
+        {% endif %}
+        <!-- split -->
+        {% if processed_preview %}
+        <section class="preview-card">
+          <h3>Processed</h3>
+          <img src="{{ processed_preview }}" alt="Processed preview" />
+        </section>
+        <div class="actions">
+          <a class="btn" href="{{ url_for('download', token=download_token) }}">
+            Download PNG
+          </a>
+        </div>
+
+        {% endif %}
+      </div>
       {% endif %}
     </main>
   </body>

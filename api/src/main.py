@@ -3,6 +3,7 @@ import shutil
 from pathlib import Path
 from fastapi import FastAPI, File, HTTPException, UploadFile
 import sys
+from fastapi.responses import FileResponse
 
 root_dir = Path(__file__).resolve().parent.parent.parent
 sys.path.append(str(root_dir))
@@ -57,10 +58,27 @@ def upload_image(image: UploadFile = File(...)):
     output_img, _ = processor.process_image(str(input_path), model_name="isnet-general-use")
     output_img.save(output_path, format="PNG")
 
-    return {
-        "input_filename": input_path.name,
-        "input_path": str(input_path),
-        "output_filename": output_path.name,
-        "output_path": str(output_path),
-        "message": "Image uploaded and processed successfully",
-    }
+    return FileResponse(
+        str(output_path),
+        media_type="image/png",
+        filename=output_path.name,
+    )
+    
+@app.get("/download")
+def download(path: str):
+    # Basic safety: allow only files under images/output
+    safe_root = os.path.abspath("images/output")
+    requested = os.path.abspath(path)
+
+    if not requested.startswith(safe_root):
+        raise HTTPException(status_code=400, detail="Invalid path")
+
+    if not os.path.exists(requested):
+        raise HTTPException(status_code=404, detail="File not found")
+
+    return FileResponse(
+        requested,
+        media_type="image/png",
+        filename=os.path.basename(requested),
+    )
+
