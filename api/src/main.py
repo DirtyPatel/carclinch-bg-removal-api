@@ -74,9 +74,9 @@ def upload_image(image: UploadFile = File(...)):
     try:
         with Image.open(io.BytesIO(data)) as img:
             img = img.convert("RGB")
-            img.thumbnail((384, 384))
+            img.thumbnail((1024, 1024))
             buf_in = io.BytesIO()
-            img.save(buf_in, format="JPEG", quality=85)
+            img.save(buf_in, format="JPEG", quality=90)
     except Exception:
         raise HTTPException(status_code=400, detail="Could not read image.")
 
