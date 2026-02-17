@@ -34,23 +34,30 @@
         {% if uploaded_preview %}
         <section class="preview-card">
           <h3>Uploaded</h3>
-          <img src="{{ uploaded_preview }}" alt="Uploaded preview" />
+          <div class="preview-media">
+            <img src="{{ uploaded_preview }}" alt="Uploaded preview" />
+          </div>
         </section>
         {% endif %}
         <!-- split -->
         {% if processed_preview %}
         <section class="preview-card">
           <h3>Processed</h3>
-          <img src="{{ processed_preview }}" alt="Processed preview" />
+          <div class="preview-media">
+            <img src="{{ processed_preview }}" alt="Processed preview" />
+          </div>
         </section>
-        <div class="actions">
-          <a class="btn" href="{{ url_for('download', token=download_token) }}">
-            Download PNG
-          </a>
-        </div>
-
         {% endif %}
       </div>
+
+      {% if processed_preview %}
+      <div class="actions">
+        <a class="btn" href="{{ url_for('download', token=download_token) }}"
+          >Download PNG</a
+        >
+      </div>
+      {% endif %}
+      <!-- split -->
       {% endif %}
     </main>
   </body>
