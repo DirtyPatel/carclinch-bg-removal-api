@@ -1,3 +1,5 @@
+import io
+from fastapi.responses import Response
 from PIL import Image
 import os
 import shutil
@@ -38,7 +40,6 @@ def get_dirs() -> tuple[Path, Path, Path]:
 def read_root():
     return {"Hello": "World"}
 
-
 @app.post("/upload-image")
 def upload_image(image: UploadFile = File(...)):
     if not (image.content_type and image.content_type.startswith("image/")):
@@ -49,57 +50,57 @@ def upload_image(image: UploadFile = File(...)):
     if ext not in ALLOWED_EXTENSIONS:
         raise HTTPException(status_code=400, detail="Invalid file extension.")
 
-    _, input_dir, output_dir = get_dirs()
+    # Read upload into memory
+    data = image.file.read()
+    image.file.close()
 
-    input_path = input_dir / original_name.name
-    output_name = f"{original_name.stem}_processed.png"
-    output_path = output_dir / output_name
-
-    # ✅ 1. Save uploaded file
+    # Open with PIL, downscale hard
     try:
-        with input_path.open("wb") as buffer:
-            shutil.copyfileobj(image.file, buffer)
-    finally:
-        image.file.close()
+        with Image.open(io.BytesIO(data)) as img:
+            img = img.convert("RGB")
+            img.thumbnail((512, 512))
+            buf_in = io.BytesIO()
+            img.save(buf_in, format="JPEG", quality=85)
+    except Exception:
+        raise HTTPException(status_code=400, detail="Could not read image.")
 
-    # ✅ 2. Downscale BEFORE background removal (THIS IS NEW)
-    with Image.open(input_path) as img:
-        img = img.convert("RGB")
-        img.thumbnail((512, 512))  # reduce memory usage
-        img.save(input_path, format="JPEG", quality=85)
+    # Process using a temp file OR bytes depending on your processor
+    # If processor needs a path, we must write a temp file safely:
+    _, input_dir, _ = get_dirs()
+    tmp_path = input_dir / "upload_tmp.jpg"
+    tmp_path.write_bytes(buf_in.getvalue())
 
-    # ✅ 3. Now run background removal
-    output_img, _ = processor.process_image(
-        str(input_path),
-        model_name="u2netp"
-    )
+    # Background removal
+    output_img, _ = processor.process_image(str(tmp_path), model_name="u2netp")
 
-    output_img.save(output_path, format="PNG")
+    # Return PNG bytes directly
+    out_buf = io.BytesIO()
+    output_img.save(out_buf, format="PNG")
+    out_buf.seek(0)
 
-    return FileResponse(
-        str(output_path),
+    return Response(
+        content=out_buf.getvalue(),
         media_type="image/png",
-        filename=output_path.name,
+        headers={"Content-Disposition": 'attachment; filename="bg-removed.png"'},
     )
-
     
-@app.get("/download")
-def download(path: str):
-    # Basic safety: allow only files under images/output
-    safe_root = os.path.abspath("images/output")
-    requested = os.path.abspath(path)
+# @app.get("/download")
+# def download(path: str):
+#     # Basic safety: allow only files under images/output
+#     safe_root = os.path.abspath("images/output")
+#     requested = os.path.abspath(path)
 
-    if not requested.startswith(safe_root):
-        raise HTTPException(status_code=400, detail="Invalid path")
+#     if not requested.startswith(safe_root):
+#         raise HTTPException(status_code=400, detail="Invalid path")
 
-    if not os.path.exists(requested):
-        raise HTTPException(status_code=404, detail="File not found")
+#     if not os.path.exists(requested):
+#         raise HTTPException(status_code=404, detail="File not found")
 
-    return FileResponse(
-        requested,
-        media_type="image/png",
-        filename=os.path.basename(requested),
-    )
+#     return FileResponse(
+#         requested,
+#         media_type="image/png",
+#         filename=os.path.basename(requested),
+#     )
     
 @app.head("/")
 def head_root():
