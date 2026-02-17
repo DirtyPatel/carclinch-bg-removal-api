@@ -40,6 +40,22 @@ def get_dirs() -> tuple[Path, Path, Path]:
 def read_root():
     return {"Hello": "World"}
 
+@app.on_event("startup")
+def warmup():
+    # force model download/init at startup (so first user request is stable)
+    try:
+        import numpy as np
+        from PIL import Image
+        # tiny dummy image
+        tmp = Path("images/input")
+        tmp.mkdir(parents=True, exist_ok=True)
+        p = tmp / "warmup.jpg"
+        Image.new("RGB", (64, 64), (255, 255, 255)).save(p)
+        processor.process_image(str(p), model_name="u2net")
+    except Exception as e:
+        print("Warmup failed:", e)
+
+
 @app.post("/upload-image")
 def upload_image(image: UploadFile = File(...)):
     if not (image.content_type and image.content_type.startswith("image/")):
@@ -58,7 +74,7 @@ def upload_image(image: UploadFile = File(...)):
     try:
         with Image.open(io.BytesIO(data)) as img:
             img = img.convert("RGB")
-            img.thumbnail((512, 512))
+            img.thumbnail((384, 384))
             buf_in = io.BytesIO()
             img.save(buf_in, format="JPEG", quality=85)
     except Exception:
@@ -71,7 +87,7 @@ def upload_image(image: UploadFile = File(...)):
     tmp_path.write_bytes(buf_in.getvalue())
 
     # Background removal
-    output_img, _ = processor.process_image(str(tmp_path), model_name="u2netp")
+    output_img, _ = processor.process_image(str(tmp_path), model_name="u2net")
 
     # Return PNG bytes directly
     out_buf = io.BytesIO()
