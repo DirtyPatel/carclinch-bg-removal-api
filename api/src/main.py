@@ -100,24 +100,6 @@ def upload_image(image: UploadFile = File(...)):
         headers={"Content-Disposition": 'attachment; filename="bg-removed.png"'},
     )
     
-# @app.get("/download")
-# def download(path: str):
-#     # Basic safety: allow only files under images/output
-#     safe_root = os.path.abspath("images/output")
-#     requested = os.path.abspath(path)
-
-#     if not requested.startswith(safe_root):
-#         raise HTTPException(status_code=400, detail="Invalid path")
-
-#     if not os.path.exists(requested):
-#         raise HTTPException(status_code=404, detail="File not found")
-
-#     return FileResponse(
-#         requested,
-#         media_type="image/png",
-#         filename=os.path.basename(requested),
-#     )
-    
 @app.head("/")
 def head_root():
     return
