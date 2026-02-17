@@ -81,4 +81,9 @@ def download(path: str):
         media_type="image/png",
         filename=os.path.basename(requested),
     )
+    
+@app.head("/")
+def head_root():
+    return
+
 
