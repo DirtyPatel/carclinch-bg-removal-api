@@ -1,3 +1,4 @@
+from PIL import Image
 import os
 import shutil
 from pathlib import Path
@@ -49,13 +50,25 @@ def upload_image(image: UploadFile = File(...)):
     output_name = f"{original_name.stem}_processed.png"
     output_path = output_dir / output_name
 
+    # ✅ 1. Save uploaded file
     try:
         with input_path.open("wb") as buffer:
             shutil.copyfileobj(image.file, buffer)
     finally:
         image.file.close()
 
-    output_img, _ = processor.process_image(str(input_path), model_name="isnet-general-use")
+    # ✅ 2. Downscale BEFORE background removal (THIS IS NEW)
+    with Image.open(input_path) as img:
+        img = img.convert("RGB")
+        img.thumbnail((1024, 1024))  # reduce memory usage
+        img.save(input_path, format="JPEG", quality=90)
+
+    # ✅ 3. Now run background removal
+    output_img, _ = processor.process_image(
+        str(input_path),
+        model_name="isnet-general-use"
+    )
+
     output_img.save(output_path, format="PNG")
 
     return FileResponse(
@@ -63,6 +76,7 @@ def upload_image(image: UploadFile = File(...)):
         media_type="image/png",
         filename=output_path.name,
     )
+
     
 @app.get("/download")
 def download(path: str):
