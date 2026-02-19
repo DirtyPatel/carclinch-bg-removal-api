@@ -1,10 +1,41 @@
-# CarClinch – Background Removal App
+# CarClinch – Background Removal Application
 
 ## Deployment Guide (Render)
 
 This document explains how to deploy the CarClinch Background Removal App using Render.
 
 ---
+
+## Overview
+
+CarClinch is a background removal application consisting of:
+
+- Backend API – FastAPI + rembg (ONNX model)
+
+- Frontend UI – Flask-based web interface
+
+- Designed for demo deployment on Render
+
+- Production-ready for Azure deployment
+
+---
+
+## Architecture
+
+```mermaid
+flowchart TD
+    User[User Browser]--->|Upload Image| Frontend[Flask Frontend]
+    Frontend--->|POST /upload-image| API[FastAPI Backend]
+    API--->|"ONNX Model (rembg)"| Processor[Background Removal Engine]
+    Processor--> API
+    API--->|Processed PNG| Frontend
+    Frontend--->|Display + Download| User
+
+```
+
+---
+
+## Deployment on Render
 
 ### 1️⃣ Clone the Project (Frontend-Flask Branch)
 
