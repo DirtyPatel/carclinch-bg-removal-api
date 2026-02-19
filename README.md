@@ -98,4 +98,34 @@ Because background removal uses ONNX models and significant memory:
 
 ### 3️⃣ Deploy Frontend (Flask) on Render
 
+Create a second Web Service.
+
+Root directory:
+
+```
+frontend
+```
+
+Build Command:
+
+```
+pip install -r requirements.txt
+```
+
+Start Command:
+
+```
+gunicorn app:app
+```
+
+Environment Variable:
+
+```
+BG_REMOVE_API_URL=https://your-api-service.onrender.com
+```
+
+This connects frontend to backend.
+
+---
+
 
