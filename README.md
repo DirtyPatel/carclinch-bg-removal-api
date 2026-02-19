@@ -128,35 +128,27 @@ This connects frontend to backend.
 
 ---
 
-### 3️⃣ Deploy Frontend (Flask) on Render
+### 4️⃣ Estimated Cost
 
-Create a second Web Service.
+Let’s calculate typical monthly cost:
 
-Root directory:
+Workspace Professional Plan:
+$19/month
 
-```
-frontend
-```
+API (Standard 2GB):
+$25/month
 
-Build Command:
+Frontend (Starter):
+$7/month
 
-```
-pip install -r requirements.txt
-```
+Total Maximum:
+$51/month
 
-Start Command:
+If services run only part of the month, billing is prorated (charged per day).
 
-```
-gunicorn app:app
-```
+---
 
-Environment Variable:
 
-```
-BG_REMOVE_API_URL=https://your-api-service.onrender.com
-```
-
-This connects frontend to backend.
 
 ---
 
