@@ -280,3 +280,5 @@ This application can be deployed:
 Both frontend and backend are fully portable and environment-variable driven.
 
 ---
+
+## [Official Documentation & Technical References](/REFERENCES.md)
