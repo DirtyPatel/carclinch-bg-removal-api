@@ -6,7 +6,7 @@ This document explains how to deploy the CarClinch Background Removal App using 
 
 ---
 
-### 1. Clone the Project (Frontend-Flask Branch)
+### 1️⃣ Clone the Project (Frontend-Flask Branch)
 
 The working deployment branch is:
 
@@ -46,3 +46,56 @@ git push origin frontend-flask
 ```
 
 Now your repository contains the deployment-ready branch.
+
+---
+
+### 2️⃣ Deploy Backend API on Render
+
+#### Step 1 – Create Web Service
+
+Go to https://render.com
+
+Click **New Web Service**
+
+Connect your GitHub repository
+
+Select branch: `frontend-flask`
+
+#### Step 2 – Configure API Service
+
+Root directory:
+
+```
+api/src
+```
+
+Build Command:
+
+```
+pip install -r requirements.txt
+```
+
+Start Command:
+
+```
+uvicorn main:app --host 0.0.0.0 --port $PORT
+```
+
+Environment Variables:
+None required (unless custom configuration is needed)
+
+#### Recommended Instance Type
+
+Because background removal uses ONNX models and significant memory:
+
+| Plan     | RAM   | Recommended      |
+| -------- | ----- | ---------------- |
+| Free     | 512MB | ❌ Not sufficient |
+| Starter  | 512MB | ❌ May crash      |
+| Standard | 2GB   | ✅ Recommended    |
+
+---
+
+### 3️⃣ Deploy Frontend (Flask) on Render
+
+
