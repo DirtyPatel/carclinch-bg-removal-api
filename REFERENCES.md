@@ -2,7 +2,7 @@
 
 This project relies on the following official documentation and technical resources.
 
-## 🔹 Render
+## Render
 
 Render Web Services
 https://render.com/docs/web-services \
@@ -19,7 +19,7 @@ https://render.com/docs/web-services#port-binding \
 Render Pricing & Instance Types
 https://render.com/pricing
 
-## 🔹 FastAPI
+## FastAPI
 
 Official FastAPI Documentation
 https://fastapi.tiangolo.com/ \
@@ -30,7 +30,7 @@ https://fastapi.tiangolo.com/tutorial/cors/ \
 FastAPI – Deployment Guide
 https://fastapi.tiangolo.com/deployment/
 
-## 🔹 Flask
+## Flask
 
 Official Flask Documentation
 https://flask.palletsprojects.com/ \
@@ -39,19 +39,19 @@ https://flask.palletsprojects.com/en/latest/deploying/ \
 Using Gunicorn with Flask
 https://flask.palletsprojects.com/en/latest/deploying/gunicorn/ 
 
-## 🔹 Uvicorn
+## Uvicorn
 
 Official Uvicorn Documentation
 https://www.uvicorn.org/
 
-## 🔹 rembg (Background Removal Engine)
+## rembg (Background Removal Engine)
 
 rembg GitHub Repository
 https://github.com/danielgatis/rembg \
 rembg Model Documentation
 https://github.com/danielgatis/rembg#models
 
-## 🔹 Microsoft Azure
+## Microsoft Azure
 
 Azure App Service – Python Quickstart
 https://learn.microsoft.com/en-us/azure/app-service/quickstart-python \
@@ -62,7 +62,7 @@ https://learn.microsoft.com/en-us/azure/storage/blobs/ \
 Azure Application Insights
 https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
 
-## 🔹 Future Scalability
+## Future Scalability
 
 Azure Durable Functions Overview
 https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview
