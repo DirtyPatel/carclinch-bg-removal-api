@@ -33,9 +33,37 @@ flowchart TD
 
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Deployment on Render](#deployment-on-render)
+  - [1. Clone the Project (Frontend-Flask Branch)](#1-clone-the-project-frontend-flask-branch)
+    - [Step 1 – Create Your Own Repository](#step-1--create-your-own-repository)
+    - [Step 2 – Pull the Project Branch](#step-2--pull-the-project-branch)
+  - [2. Deploy Backend API on Render](#2-deploy-backend-api-on-render)
+    - [Step 1 – Create Web Service](#step-1--create-web-service)
+    - [Step 2 – Configure API Service](#step-2--configure-api-service)
+    - [Recommended Instance Type](#recommended-instance-type)
+  - [3. Deploy Frontend (Flask) on Render](#3-deploy-frontend-flask-on-render)
+  - [4. Estimated Cost](#4-estimated-cost)
+  - [5. Important Notes](#5-important-notes)
+  - [Alternative (Lower Cost Demo Mode)](#alternative-lower-cost-demo-mode)
+- [Azure Production Deployment (Recommended for Scale)](#azure-production-deployment-recommended-for-scale)
+  - [Suggested Azure Architecture](#suggested-azure-architecture)
+  - [Azure Deployment Strategy](#azure-deployment-strategy)
+    - [Option 1 – Azure App Service (Simplest)](#option-1--azure-app-service-simplest)
+    - [Option 2 – Azure Container Apps (Recommended)](#option-2--azure-container-apps-recommended)
+    - [Storage Recommendation](#storage-recommendation)
+  - [Notes](#notes)
+- [Summary](#summary)
+- [Official Documentation & Technical References](#official-documentation--technical-references)
+
+---
+
 ## Deployment on Render
 
-### 1️⃣ Clone the Project (Frontend-Flask Branch)
+### 1. Clone the Project (Frontend-Flask Branch)
 
 The working deployment branch is:
 
@@ -78,7 +106,7 @@ Now your repository contains the deployment-ready branch.
 
 ---
 
-### 2️⃣ Deploy Backend API on Render
+### 2. Deploy Backend API on Render
 
 #### Step 1 – Create Web Service
 
@@ -119,13 +147,13 @@ Because background removal uses ONNX models and significant memory:
 
 | Plan     | RAM   | Recommended      |
 | -------- | ----- | ---------------- |
-| Free     | 512MB | ❌ Not sufficient |
-| Starter  | 512MB | ❌ May crash      |
-| Standard | 2GB   | ✅ Recommended    |
+| Free     | 512MB |  Not sufficient |
+| Starter  | 512MB |  May crash      |
+| Standard | 2GB   |  Recommended    |
 
 ---
 
-### 3️⃣ Deploy Frontend (Flask) on Render
+### 3. Deploy Frontend (Flask) on Render
 
 Create a second Web Service.
 
@@ -157,7 +185,7 @@ This connects frontend to backend.
 
 ---
 
-### 4️⃣ Estimated Cost
+### 4. Estimated Cost
 
 Let’s calculate typical monthly cost:
 
@@ -177,7 +205,7 @@ If services run only part of the month, billing is prorated (charged per day).
 
 ---
 
-### 5️⃣ Important Notes
+### 5. Important Notes
 
 The API downloads the ONNX model on first startup.
 
@@ -189,7 +217,7 @@ Durable cloud storage (Azure Blob) can be integrated later.
 
 ---
 
-### ✅ Alternative (Lower Cost Demo Mode)
+### Alternative (Lower Cost Demo Mode)
 
 For demonstration only:
 
