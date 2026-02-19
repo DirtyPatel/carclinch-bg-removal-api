@@ -4,6 +4,34 @@ This document explains how to deploy the CarClinch Background Removal App using 
 
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Deployment on Render](#deployment-on-render)
+  - [1. Clone the Project (Frontend-Flask Branch)](#1-clone-the-project-frontend-flask-branch)
+    - [Step 1 – Create Your Own Repository](#step-1--create-your-own-repository)
+    - [Step 2 – Pull the Project Branch](#step-2--pull-the-project-branch)
+  - [2. Deploy Backend API on Render](#2-deploy-backend-api-on-render)
+    - [Step 1 – Create Web Service](#step-1--create-web-service)
+    - [Step 2 – Configure API Service](#step-2--configure-api-service)
+    - [Recommended Instance Type](#recommended-instance-type)
+  - [3. Deploy Frontend (Flask) on Render](#3-deploy-frontend-flask-on-render)
+  - [4. Estimated Cost](#4-estimated-cost)
+  - [5. Important Notes](#5-important-notes)
+  - [Alternative (Lower Cost Demo Mode)](#alternative-lower-cost-demo-mode)
+- [Azure Production Deployment (Recommended for Scale)](#azure-production-deployment-recommended-for-scale)
+  - [Suggested Azure Architecture](#suggested-azure-architecture)
+  - [Azure Deployment Strategy](#azure-deployment-strategy)
+    - [Option 1 – Azure App Service (Simplest)](#option-1--azure-app-service-simplest)
+    - [Option 2 – Azure Container Apps (Recommended)](#option-2--azure-container-apps-recommended)
+    - [Storage Recommendation](#storage-recommendation)
+  - [Notes](#notes)
+- [Summary](#summary)
+- [Official Documentation & Technical References](#official-documentation--technical-references)
+
+---
+
 ## Overview
 
 CarClinch is a background removal application consisting of:
@@ -30,34 +58,6 @@ flowchart TD
     Frontend--->|Display + Download| User
 
 ```
-
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Deployment on Render](#deployment-on-render)
-  - [1. Clone the Project (Frontend-Flask Branch)](#1-clone-the-project-frontend-flask-branch)
-    - [Step 1 – Create Your Own Repository](#step-1--create-your-own-repository)
-    - [Step 2 – Pull the Project Branch](#step-2--pull-the-project-branch)
-  - [2. Deploy Backend API on Render](#2-deploy-backend-api-on-render)
-    - [Step 1 – Create Web Service](#step-1--create-web-service)
-    - [Step 2 – Configure API Service](#step-2--configure-api-service)
-    - [Recommended Instance Type](#recommended-instance-type)
-  - [3. Deploy Frontend (Flask) on Render](#3-deploy-frontend-flask-on-render)
-  - [4. Estimated Cost](#4-estimated-cost)
-  - [5. Important Notes](#5-important-notes)
-  - [Alternative (Lower Cost Demo Mode)](#alternative-lower-cost-demo-mode)
-- [Azure Production Deployment (Recommended for Scale)](#azure-production-deployment-recommended-for-scale)
-  - [Suggested Azure Architecture](#suggested-azure-architecture)
-  - [Azure Deployment Strategy](#azure-deployment-strategy)
-    - [Option 1 – Azure App Service (Simplest)](#option-1--azure-app-service-simplest)
-    - [Option 2 – Azure Container Apps (Recommended)](#option-2--azure-container-apps-recommended)
-    - [Storage Recommendation](#storage-recommendation)
-  - [Notes](#notes)
-- [Summary](#summary)
-- [Official Documentation & Technical References](#official-documentation--technical-references)
 
 ---
 
