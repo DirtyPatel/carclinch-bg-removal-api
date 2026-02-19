@@ -37,7 +37,31 @@ https://flask.palletsprojects.com/ \
 Flask Deployment Documentation
 https://flask.palletsprojects.com/en/latest/deploying/ \
 Using Gunicorn with Flask
-https://flask.palletsprojects.com/en/latest/deploying/gunicorn/ \
+https://flask.palletsprojects.com/en/latest/deploying/gunicorn/ 
 
 ## 🔹 Uvicorn
 
+Official Uvicorn Documentation
+https://www.uvicorn.org/
+
+## 🔹 rembg (Background Removal Engine)
+
+rembg GitHub Repository
+https://github.com/danielgatis/rembg \
+
+rembg Model Documentation
+https://github.com/danielgatis/rembg#models
+
+## 🔹 Microsoft Azure
+
+Azure App Service – Python Quickstart
+https://learn.microsoft.com/en-us/azure/app-service/quickstart-python \
+
+Azure Container Apps
+https://learn.microsoft.com/en-us/azure/container-apps/ \
+
+Azure Blob Storage
+https://learn.microsoft.com/en-us/azure/storage/blobs/ \
+
+Azure Application Insights
+https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
