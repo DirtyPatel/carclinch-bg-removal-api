@@ -148,8 +148,27 @@ If services run only part of the month, billing is prorated (charged per day).
 
 ---
 
+### 5️⃣ Important Notes
 
+The API downloads the ONNX model on first startup.
+
+Memory usage may spike during initial load.
+
+For production scale, Azure deployment is recommended.
+
+Durable cloud storage (Azure Blob) can be integrated later.
 
 ---
 
+### ✅ Alternative (Lower Cost Demo Mode)
 
+For demonstration only:
+
+API → Standard plan
+
+Frontend → Free plan
+
+Estimated cost:
+~$25–30/month
+
+---
