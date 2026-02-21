@@ -50,19 +50,3 @@ rembg GitHub Repository
 https://github.com/danielgatis/rembg \
 rembg Model Documentation
 https://github.com/danielgatis/rembg#models
-
-## Microsoft Azure
-
-Azure App Service – Python Quickstart
-https://learn.microsoft.com/en-us/azure/app-service/quickstart-python \
-Azure Container Apps
-https://learn.microsoft.com/en-us/azure/container-apps/ \
-Azure Blob Storage
-https://learn.microsoft.com/en-us/azure/storage/blobs/ \
-Azure Application Insights
-https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-
-## Future Scalability
-
-Azure Durable Functions Overview
-https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview

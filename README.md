@@ -42,8 +42,6 @@ CarClinch is a background removal application consisting of:
 
 - Designed for demo deployment on Render
 
-- Production-ready for Azure deployment
-
 [Link to CarClinch Background Removal Application](https://carclinch-bg-removal-api-1.onrender.com/)
 
 ---
@@ -229,65 +227,6 @@ Frontend → Free plan
 
 Estimated cost:
 ~$25–30/month
-
----
-
-## Azure Production Deployment (Recommended for Scale)
-
-For production environments, Azure provides better scalability and enterprise integration.
-
-### Suggested Azure Architecture
-
-```mermaid
-
-flowchart TD
-    User[User Browser] --> Frontend[Azure App Service - Flask]
-    Frontend --> API[Azure App Service / Azure Container Apps]
-    API --> Blob[Azure Blob Storage]
-    API --> Monitor[Azure Application Insights]
-```
-
----
-
-### Azure Deployment Strategy
-
-#### Option 1 – Azure App Service (Simplest)
-
-Deploy both:
-
-- Flask frontend
-- FastAPI backend
-
-As two separate App Services.
-
-Environment variable in frontend:
-
-```
-BG_REMOVE_API_URL=https://api-app.azurewebsites.net
-```
-
-#### Option 2 – Azure Container Apps (Recommended)
-
-Containerize both services using Docker:
-
-- Backend container
-- Frontend container
-
-Deploy to Azure Container Apps.
-
-Advantages:
-
-- Independent scaling
-- Memory configuration control
-- Production-ready orchestration
-
-#### Storage Recommendation
-
-For production:
-
-- Store processed images in Azure Blob Storage
-- Avoid local disk storage
-- Enable persistent storage
 
 ---
 
