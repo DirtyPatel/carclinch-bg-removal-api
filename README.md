@@ -223,15 +223,6 @@ Estimated cost:
 
 ---
 
-### Notes
-
-- First startup downloads ONNX model (initial delay expected).
-- Background removal is CPU-intensive.
-- Memory spikes may occur during model loading.
-- For enterprise usage, Azure deployment is strongly recommended.
-
----
-
 ## Summary
 
 This application can be deployed:
