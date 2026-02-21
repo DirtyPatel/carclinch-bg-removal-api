@@ -28,9 +28,7 @@ This document explains how to deploy the CarClinch Background Removal App using 
 CarClinch is a background removal application consisting of:
 
 - Backend API – FastAPI + rembg (ONNX model)
-
 - Frontend UI – Flask-based web interface
-
 - Designed for demo deployment on Render
 
 [Link to CarClinch Background Removal Application](https://carclinch-bg-removal-api-1.onrender.com/)
