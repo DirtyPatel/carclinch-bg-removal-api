@@ -20,13 +20,6 @@ This document explains how to deploy the CarClinch Background Removal App using 
   - [4. Estimated Cost](#4-estimated-cost)
   - [5. Important Notes](#5-important-notes)
   - [Alternative (Lower Cost Demo Mode)](#alternative-lower-cost-demo-mode)
-- [Azure Production Deployment (Recommended for Scale)](#azure-production-deployment-recommended-for-scale)
-  - [Suggested Azure Architecture](#suggested-azure-architecture)
-  - [Azure Deployment Strategy](#azure-deployment-strategy)
-    - [Option 1 – Azure App Service (Simplest)](#option-1--azure-app-service-simplest)
-    - [Option 2 – Azure Container Apps (Recommended)](#option-2--azure-container-apps-recommended)
-    - [Storage Recommendation](#storage-recommendation)
-  - [Notes](#notes)
 - [Summary](#summary)
 - [Official Documentation & Technical References](#official-documentation--technical-references)
 
