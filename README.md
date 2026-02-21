@@ -18,8 +18,6 @@ This document explains how to deploy the CarClinch Background Removal App using 
     - [Recommended Instance Type](#recommended-instance-type)
   - [3. Deploy Frontend (Flask) on Render](#3-deploy-frontend-flask-on-render)
   - [4. Estimated Cost](#4-estimated-cost)
-  - [5. Important Notes](#5-important-notes)
-  - [Alternative (Lower Cost Demo Mode)](#alternative-lower-cost-demo-mode)
 - [Summary](#summary)
 - [Official Documentation & Technical References](#official-documentation--technical-references)
 
