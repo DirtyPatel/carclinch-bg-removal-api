@@ -69,6 +69,34 @@ def process_image(
     return output_img, mask
 
 
+def replace_background(
+    foreground_input: Union[str, Path, Image.Image],
+    background_input: Union[str, Path, Image.Image],
+    model_name: str,
+    max_size: Optional[Tuple[int, int]] = (1024, 1024),
+) -> Image.Image:
+    """
+    Removes the background from the foreground image and replaces it with
+    the provided background image.
+    """
+    foreground_img, _ = process_image(foreground_input, model_name, max_size)
+
+    if isinstance(background_input, (str, Path)):
+        background_img = Image.open(background_input).convert("RGBA")
+    else:
+        background_img = background_input.convert("RGBA")
+
+    # use Image.Resampling.LANCZOS for high-quality downsampling
+    background_img = background_img.resize(
+        foreground_img.size, Image.Resampling.LANCZOS
+    )
+
+    # Image.alpha_composite requires both images to be RGBA and the same size
+    combined_img = Image.alpha_composite(background_img, foreground_img)
+
+    return combined_img.convert("RGB")  # Convert back to RGB for standard saving
+
+
 def clear_sessions():
     """Explicitly clears the model cache to free resources."""
     get_session.cache_clear()
